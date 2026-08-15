@@ -44,7 +44,7 @@ function ToggleButtons({ options, value, onChange }) {
   );
 }
 
-export default function AddTransaction({ cards, setTransactions, purchases, setPurchases, prefill, goTo }) {
+export default function AddTransaction({ cards, setTransactions, purchases, setPurchases, prefill, goTo, isMobile = false }) {
   const [formMode, setFormMode] = useState(prefill?.mode === 'card' ? 'card' : 'cash');
 
   // Cash form state
@@ -139,7 +139,7 @@ export default function AddTransaction({ cards, setTransactions, purchases, setP
       />
 
       {formMode === 'cash' && (
-        <div style={cardStyle}>
+        <div style={{ ...cardStyle, padding: isMobile ? 16 : 24, minWidth: isMobile ? 0 : 340 }}>
           <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 18 }}>Lançar receita ou gasto à vista</div>
           <form onSubmit={submitCash}>
             <ToggleButtons
@@ -176,7 +176,7 @@ export default function AddTransaction({ cards, setTransactions, purchases, setP
               />
             </div>
 
-            <div style={{ display: 'flex', gap: 12 }}>
+            <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? 0 : 12 }}>
               <div style={{ ...fieldWrap, flex: 1 }}>
                 <label style={labelStyle}>Valor (R$)</label>
                 <input
@@ -216,7 +216,7 @@ export default function AddTransaction({ cards, setTransactions, purchases, setP
       )}
 
       {formMode === 'card' && (
-        <div style={cardStyle}>
+        <div style={{ ...cardStyle, padding: isMobile ? 16 : 24, minWidth: isMobile ? 0 : 340 }}>
           <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 18 }}>Compra no cartão de crédito</div>
           {cards.length === 0 ? (
             <div style={{ color: '#6b7280', fontSize: 13 }}>
@@ -264,7 +264,7 @@ export default function AddTransaction({ cards, setTransactions, purchases, setP
                 />
               </div>
 
-              <div style={{ display: 'flex', gap: 12 }}>
+              <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? 0 : 12 }}>
                 <div style={{ ...fieldWrap, flex: 1 }}>
                   <label style={labelStyle}>Valor total (R$)</label>
                   <input

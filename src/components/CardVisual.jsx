@@ -1,15 +1,16 @@
 import { shadeColor } from '../utils/color';
 import { formatBRL } from '../utils/finance';
 
-export default function CardVisual({ card, usedAmount = 0, footer }) {
+export default function CardVisual({ card, usedAmount = 0, footer, fluid = false }) {
   const gradient = `linear-gradient(135deg, ${card.color} 0%, ${shadeColor(card.color, -35)} 100%)`;
   const pct = card.limit > 0 ? Math.min(100, Math.round((usedAmount / card.limit) * 100)) : 0;
 
   return (
     <div
       style={{
-        width: 260,
-        minWidth: 260,
+        width: fluid ? '100%' : 260,
+        minWidth: fluid ? 0 : 260,
+        maxWidth: fluid ? 340 : undefined,
         height: 156,
         borderRadius: 18,
         padding: 20,

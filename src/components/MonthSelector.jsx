@@ -1,6 +1,6 @@
 import { addMonths, monthLabel } from '../utils/finance';
 
-export default function MonthSelector({ year, month, onChange }) {
+export default function MonthSelector({ year, month, onChange, fullWidth = false }) {
   const go = (delta) => {
     const r = addMonths(year, month, delta);
     onChange(r.year, r.month);
@@ -25,17 +25,20 @@ export default function MonthSelector({ year, month, onChange }) {
       style={{
         display: 'flex',
         alignItems: 'center',
+        justifyContent: fullWidth ? 'space-between' : 'flex-start',
         gap: 10,
         background: '#ffffff',
         padding: '8px 10px',
         borderRadius: 12,
         boxShadow: '0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06)',
+        width: fullWidth ? '100%' : 'auto',
+        boxSizing: 'border-box',
       }}
     >
       <button onClick={() => go(-1)} style={btnStyle} aria-label="Mês anterior">
         ‹
       </button>
-      <div style={{ fontWeight: 700, fontSize: 14, minWidth: 140, textAlign: 'center', color: '#111827' }}>
+      <div style={{ fontWeight: 700, fontSize: 14, minWidth: fullWidth ? 0 : 140, textAlign: 'center', color: '#111827' }}>
         {monthLabel(year, month)}
       </div>
       <button onClick={() => go(1)} style={btnStyle} aria-label="Próximo mês">

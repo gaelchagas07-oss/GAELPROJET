@@ -18,7 +18,7 @@ const rowStyle = {
   borderBottom: '1px solid #f3f4f6',
 };
 
-export default function History({ period, transactions, setTransactions, purchases, setPurchases, cards }) {
+export default function History({ period, transactions, setTransactions, purchases, setPurchases, cards, isMobile = false }) {
   const { year, month } = period;
 
   const monthTransactions = useMemo(
@@ -51,8 +51,8 @@ export default function History({ period, transactions, setTransactions, purchas
   return (
     <div>
       <div style={{ fontSize: 13, color: '#6b7280', marginBottom: 16 }}>Exibindo movimentações de {monthLabel(year, month)}.</div>
-      <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
-        <div style={cardStyle}>
+      <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? 14 : 20, flexWrap: 'wrap' }}>
+        <div style={{ ...cardStyle, padding: isMobile ? 16 : 24, minWidth: isMobile ? 0 : 340 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
             <div style={{ fontWeight: 700, fontSize: 15 }}>💵 Transações à vista</div>
             <div style={{ fontSize: 12, fontWeight: 700 }}>
@@ -84,7 +84,7 @@ export default function History({ period, transactions, setTransactions, purchas
           )}
         </div>
 
-        <div style={cardStyle}>
+        <div style={{ ...cardStyle, padding: isMobile ? 16 : 24, minWidth: isMobile ? 0 : 340 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
             <div style={{ fontWeight: 700, fontSize: 15 }}>💳 Parcelas do cartão</div>
             <div style={{ fontSize: 12, fontWeight: 700, color: '#dc2626' }}>-{formatBRL(totalCard)}</div>

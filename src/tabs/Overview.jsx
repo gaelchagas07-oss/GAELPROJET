@@ -61,7 +61,7 @@ function SummaryCard({ title, value, icon, color, sparkData, sparkColor }) {
   );
 }
 
-export default function Overview({ period, transactions, cards, purchases, savingsGoal, setSavingsGoal, goTo }) {
+export default function Overview({ period, transactions, cards, purchases, savingsGoal, setSavingsGoal, goTo, isMobile = false }) {
   const { year, month } = period;
   const [goalInput, setGoalInput] = useState(savingsGoal.target);
 
@@ -136,14 +136,14 @@ export default function Overview({ period, transactions, cards, purchases, savin
   const cardStyle = {
     background: '#ffffff',
     borderRadius: 16,
-    padding: 20,
+    padding: isMobile ? 16 : 20,
     boxShadow: '0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06)',
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? 14 : 20 }}>
       {/* Summary cards */}
-      <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: isMobile ? 12 : 16, flexWrap: 'wrap' }}>
         <SummaryCard
           title="Receitas do mês"
           value={current.income}
@@ -171,7 +171,7 @@ export default function Overview({ period, transactions, cards, purchases, savin
       </div>
 
       {/* Cards + quick actions */}
-      <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: isMobile ? 14 : 20, flexWrap: 'wrap' }}>
         <div style={{ ...cardStyle, flex: 2, minWidth: 320 }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
             <div style={{ fontWeight: 700, fontSize: 15 }}>Meus cartões</div>
@@ -232,7 +232,7 @@ export default function Overview({ period, transactions, cards, purchases, savin
       </div>
 
       {/* Bar chart + latest transactions */}
-      <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: isMobile ? 14 : 20, flexWrap: 'wrap' }}>
         <div style={{ ...cardStyle, flex: 1, minWidth: 320 }}>
           <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 6 }}>Gastos por categoria — {monthLabel(year, month)}</div>
           <BarChart data={categoryData} />
@@ -279,7 +279,7 @@ export default function Overview({ period, transactions, cards, purchases, savin
       </div>
 
       {/* Alerts + savings goal */}
-      <div style={{ display: 'flex', gap: 20, flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: isMobile ? 14 : 20, flexWrap: 'wrap' }}>
         <div style={{ ...cardStyle, flex: 1, minWidth: 300 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
             <span style={{ fontSize: 18 }}>⚠️</span>

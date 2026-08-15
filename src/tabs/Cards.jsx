@@ -50,7 +50,7 @@ function CardTimeline({ card, allInstallments, period }) {
   );
 }
 
-export default function Cards({ cards, setCards, purchases, setPurchases, period }) {
+export default function Cards({ cards, setCards, purchases, setPurchases, period, isMobile = false }) {
   const [name, setName] = useState('');
   const [limit, setLimit] = useState('');
   const [color, setColor] = useState(DEFAULT_COLORS[0]);
@@ -76,8 +76,8 @@ export default function Cards({ cards, setCards, purchases, setPurchases, period
   }
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-      <div style={cardStyle}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? 14 : 20 }}>
+      <div style={{ ...cardStyle, padding: isMobile ? 16 : 24 }}>
         <div style={{ fontWeight: 700, fontSize: 16, marginBottom: 18 }}>Cadastrar novo cartão</div>
         <form onSubmit={addCard} style={{ display: 'flex', gap: 14, flexWrap: 'wrap', alignItems: 'flex-end' }}>
           <div style={{ flex: 2, minWidth: 180 }}>
@@ -122,10 +122,10 @@ export default function Cards({ cards, setCards, purchases, setPurchases, period
         <div style={{ ...cardStyle, color: '#9ca3af', textAlign: 'center', padding: 40 }}>Nenhum cartão cadastrado ainda.</div>
       ) : (
         cards.map((card) => (
-          <div key={card.id} style={cardStyle}>
-            <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
+          <div key={card.id} style={{ ...cardStyle, padding: isMobile ? 16 : 24 }}>
+            <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? 16 : 24, flexWrap: 'wrap' }}>
               <div style={{ position: 'relative' }}>
-                <CardVisual card={card} usedAmount={0} />
+                <CardVisual card={card} usedAmount={0} fluid={isMobile} />
                 <button
                   onClick={() => removeCard(card.id)}
                   title="Excluir cartão"
