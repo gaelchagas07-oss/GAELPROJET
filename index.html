@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gael Chagas | Advogado Criminalista</title>
   <meta name="description" content="Gael Chagas, advogado criminalista. Atuação em inquéritos, flagrantes, processos criminais e Tribunal do Júri, com sigilo e responsabilidade.">
-  <meta name="theme-color" content="#183547">
+  <meta name="theme-color" content="#0c1d29">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="topo">
+  <header class="topo" id="topo">
     <div class="container topo__inner">
       <a href="#inicio" class="topo__logo" aria-label="Gael Chagas Advogado, início">
         <img src="assets/logo-horizontal-claro.webp" alt="Gael Chagas Advogado" width="1200" height="487">
@@ -35,50 +35,77 @@
     <section class="hero">
       <div class="container hero__inner">
         <div class="hero__texto">
-          <p class="eyebrow">Advocacia Criminal</p>
-          <h1>Defesa técnica e cuidadosa <em>em todas as fases</em> do processo penal.</h1>
-          <p class="hero__lead">Da delegacia aos tribunais, cada caso é analisado com atenção, sigilo e respeito às garantias previstas na Constituição.</p>
-          <a class="btn" data-whatsapp href="#contato">Falar pelo WhatsApp</a>
-          <p class="hero__nota">O primeiro contato é confidencial. Nenhum resultado pode ser garantido.</p>
+          <p class="eyebrow" data-revelar>Advocacia Criminal</p>
+          <h1 data-revelar>Defesa técnica e cuidadosa <em>em todas as fases</em> do processo penal.</h1>
+          <p class="hero__lead" data-revelar>Da delegacia aos tribunais, cada caso é analisado com atenção, sigilo e respeito às garantias previstas na Constituição.</p>
+          <div class="hero__acoes" data-revelar>
+            <a class="btn" data-whatsapp href="#contato">Falar pelo WhatsApp</a>
+            <a class="btn btn--linha" href="#atuacao">Áreas de atuação</a>
+          </div>
+          <p class="hero__nota" data-revelar>O primeiro contato é confidencial. Nenhum resultado pode ser garantido.</p>
         </div>
         <div class="hero__marca" aria-hidden="true">
-          <img src="assets/simbolo.webp" alt="" width="494" height="1065">
+          <div class="hero__aro"></div>
+          <div class="simbolo-metal"></div>
+        </div>
+      </div>
+      <a class="hero__rolar" href="#principios" aria-label="Rolar para o conteúdo"><span></span></a>
+    </section>
+
+    <section id="principios" class="principios" aria-label="Princípios do atendimento">
+      <div class="container principios__grade">
+        <div class="principio" data-revelar>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+          <h3>Sigilo profissional</h3>
+          <p>Tudo o que é dito na consulta permanece protegido, mesmo sem contratação.</p>
+        </div>
+        <div class="principio" data-revelar>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a4 4 0 0 0 6 0L5 7Zm14 0-3 7a4 4 0 0 0 6 0l-3-7ZM8 21h8"/></svg>
+          <h3>Rigor técnico</h3>
+          <p>Estudo detalhado dos autos, da legislação e da jurisprudência aplicável.</p>
+        </div>
+        <div class="principio" data-revelar>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/><path d="M8 9h8M8 13h5"/></svg>
+          <h3>Comunicação clara</h3>
+          <p>Cada etapa explicada em linguagem direta, sem juridiquês desnecessário.</p>
         </div>
       </div>
     </section>
 
     <section id="atuacao" class="secao secao--profundo">
       <div class="container">
-        <p class="eyebrow">Atuação</p>
-        <h2>Áreas de atuação</h2>
-        <p class="secao__intro">Defesa em todas as fases da persecução penal.</p>
+        <div class="cabecalho" data-revelar>
+          <p class="eyebrow">Atuação</p>
+          <h2>Áreas de <em>atuação</em></h2>
+          <p class="secao__intro">Defesa em todas as fases da persecução penal.</p>
+        </div>
         <div class="grade">
-          <article class="card">
+          <article class="card" data-revelar>
             <span class="card__num">01</span>
             <h3>Fase policial</h3>
             <p>Acompanhamento em delegacia, flagrantes, audiências de custódia, inquéritos e pedidos de liberdade.</p>
           </article>
-          <article class="card">
+          <article class="card" data-revelar>
             <span class="card__num">02</span>
             <h3>Processos criminais</h3>
             <p>Defesa em ações penais, da resposta à acusação às alegações finais e recursos.</p>
           </article>
-          <article class="card">
+          <article class="card" data-revelar>
             <span class="card__num">03</span>
             <h3>Tribunal do Júri</h3>
             <p>Atuação em crimes dolosos contra a vida, do sumário da culpa ao plenário.</p>
           </article>
-          <article class="card">
+          <article class="card" data-revelar>
             <span class="card__num">04</span>
             <h3>Crimes econômicos</h3>
             <p>Defesa em crimes contra a ordem tributária, o sistema financeiro e a administração pública.</p>
           </article>
-          <article class="card">
+          <article class="card" data-revelar>
             <span class="card__num">05</span>
             <h3>Habeas corpus e recursos</h3>
             <p>Impetração de habeas corpus e recursos em tribunais estaduais e superiores.</p>
           </article>
-          <article class="card">
+          <article class="card" data-revelar>
             <span class="card__num">06</span>
             <h3>Execução penal</h3>
             <p>Progressão de regime, livramento condicional e demais incidentes da execução.</p>
@@ -89,76 +116,91 @@
 
     <section id="atendimento" class="secao secao--ouro">
       <div class="container">
-        <p class="eyebrow eyebrow--escuro">Atendimento</p>
-        <h2>Como funciona</h2>
+        <div class="cabecalho" data-revelar>
+          <p class="eyebrow eyebrow--escuro">Atendimento</p>
+          <h2>Como <em>funciona</em></h2>
+        </div>
         <ol class="passos">
-          <li>
-            <span class="passos__num">1</span>
-            <div><strong>Contato inicial</strong><p>Você descreve a situação de forma resumida, pelo WhatsApp.</p></div>
+          <li data-revelar>
+            <span class="passos__num">I</span>
+            <strong>Contato inicial</strong>
+            <p>Você descreve a situação de forma resumida, pelo WhatsApp.</p>
           </li>
-          <li>
-            <span class="passos__num">2</span>
-            <div><strong>Análise preliminar</strong><p>Avaliamos as informações e explicamos, com clareza, as possibilidades e os limites de cada caminho.</p></div>
+          <li data-revelar>
+            <span class="passos__num">II</span>
+            <strong>Análise preliminar</strong>
+            <p>Avaliamos as informações e explicamos, com clareza, as possibilidades e os limites de cada caminho.</p>
           </li>
-          <li>
-            <span class="passos__num">3</span>
-            <div><strong>Atuação</strong><p>Se houver contratação, os honorários são ajustados em contrato escrito, conforme o Código de Ética da OAB.</p></div>
+          <li data-revelar>
+            <span class="passos__num">III</span>
+            <strong>Atuação</strong>
+            <p>Se houver contratação, os honorários são ajustados em contrato escrito, conforme o Código de Ética da OAB.</p>
           </li>
         </ol>
-        <p class="aviso">Evite enviar documentos ou detalhes sensíveis por mensagem antes de conversar com o advogado.</p>
+        <p class="aviso" data-revelar>Evite enviar documentos ou detalhes sensíveis por mensagem antes de conversar com o advogado.</p>
       </div>
     </section>
 
     <section id="sobre" class="secao secao--azul">
       <div class="container sobre">
-        <div class="sobre__painel" aria-hidden="true">
-          <img src="assets/simbolo.webp" alt="" width="494" height="1065">
+        <div class="sobre__painel" aria-hidden="true" data-revelar>
+          <div class="simbolo-metal"></div>
         </div>
-        <div>
+        <div data-revelar>
           <p class="eyebrow">Sobre</p>
-          <h2>Gael Chagas</h2>
-          <p>Advogado criminalista, inscrito na OAB/PA sob o nº 34396.</p>
+          <h2>Gael <em>Chagas</em></h2>
+          <p class="sobre__oab">Advogado criminalista · OAB/PA 34396</p>
           <p>Atua na defesa criminal com atenção ao caso concreto, sigilo profissional e respeito às garantias constitucionais do acusado, em todas as fases do processo.</p>
-          <p class="sobre__nota">A coluna que compõe a marca simboliza proteção e segurança, princípios que orientam o atendimento.</p>
+          <blockquote class="sobre__conceito">
+            <p>A coluna que compõe a marca simboliza proteção e segurança, princípios que orientam cada atendimento.</p>
+          </blockquote>
         </div>
       </div>
     </section>
 
-    <section id="duvidas" class="secao">
-      <div class="container container--estreito">
-        <p class="eyebrow eyebrow--escuro">Dúvidas</p>
-        <h2>Perguntas frequentes</h2>
-        <details>
-          <summary>O que fazer se um familiar foi preso em flagrante?</summary>
-          <p>A pessoa tem direito de permanecer em silêncio, de ser assistida por advogado e de ser levada a uma audiência de custódia em até 24 horas. Procure um advogado o quanto antes.</p>
-        </details>
-        <details>
-          <summary>Preciso falar com a polícia sem advogado?</summary>
-          <p>Não. O direito ao silêncio e à assistência de advogado está previsto na Constituição. Orientação individual depende da análise do caso.</p>
-        </details>
-        <details>
-          <summary>A primeira conversa é sigilosa?</summary>
-          <p>Sim. O sigilo profissional abrange as informações compartilhadas na consulta, mesmo que o contrato não seja fechado.</p>
-        </details>
-        <details>
-          <summary>Qual é a chance de absolvição?</summary>
-          <p>Nenhum advogado sério pode prometer resultado. O que se oferece é defesa técnica, dedicada e dentro da lei.</p>
-        </details>
+    <section id="duvidas" class="secao secao--clara">
+      <div class="container faq">
+        <div class="cabecalho faq__cabecalho" data-revelar>
+          <p class="eyebrow eyebrow--escuro">Dúvidas</p>
+          <h2>Perguntas <em>frequentes</em></h2>
+          <p class="secao__intro">Informações gerais. Cada caso exige análise individual.</p>
+        </div>
+        <div class="faq__lista" data-revelar>
+          <details>
+            <summary>O que fazer se um familiar foi preso em flagrante?</summary>
+            <p>A pessoa tem direito de permanecer em silêncio, de ser assistida por advogado e de ser levada a uma audiência de custódia em até 24 horas. Procure um advogado o quanto antes.</p>
+          </details>
+          <details>
+            <summary>Preciso falar com a polícia sem advogado?</summary>
+            <p>Não. O direito ao silêncio e à assistência de advogado está previsto na Constituição. Orientação individual depende da análise do caso.</p>
+          </details>
+          <details>
+            <summary>A primeira conversa é sigilosa?</summary>
+            <p>Sim. O sigilo profissional abrange as informações compartilhadas na consulta, mesmo que o contrato não seja fechado.</p>
+          </details>
+          <details>
+            <summary>Qual é a chance de absolvição?</summary>
+            <p>Nenhum advogado sério pode prometer resultado. O que se oferece é defesa técnica, dedicada e dentro da lei.</p>
+          </details>
+        </div>
       </div>
     </section>
 
-    <section id="contato" class="secao secao--azul contato">
-      <div class="container contato__inner">
-        <div>
-          <p class="eyebrow">Contato</p>
-          <h2>Atendimento sigiloso</h2>
-          <p class="secao__intro">Descreva sua situação em poucas linhas. A conversa é confidencial.</p>
-          <a class="btn" data-whatsapp href="#contato">Falar pelo WhatsApp</a>
+    <section id="contato" class="secao contato">
+      <div class="container">
+        <div class="contato__caixa" data-revelar>
+          <div>
+            <p class="eyebrow">Contato</p>
+            <h2>Atendimento <em>sigiloso</em></h2>
+            <p class="secao__intro">Descreva sua situação em poucas linhas. A conversa é confidencial.</p>
+            <a class="btn" data-whatsapp href="#contato">Falar pelo WhatsApp</a>
+          </div>
+          <ul class="dados">
+            <li><span>WhatsApp</span><a href="tel:+5591980814834">(91) 98081-4834</a></li>
+            <li><span>E-mail</span><a href="mailto:gaelchagas07@hotmail.com">gaelchagas07@hotmail.com</a></li>
+            <li><span>Inscrição</span>OAB/PA 34396</li>
+          </ul>
         </div>
-        <ul class="dados">
-          <li><span>WhatsApp</span><a href="tel:+5591980814834">(91) 98081-4834</a></li>
-          <li><span>E-mail</span><a href="mailto:gaelchagas07@hotmail.com">gaelchagas07@hotmail.com</a></li>
-        </ul>
       </div>
     </section>
 
@@ -166,11 +208,15 @@
 
   <footer class="rodape">
     <div class="container">
-      <img class="rodape__logo" src="assets/logo-horizontal-claro.webp" alt="Gael Chagas Advogado" width="1200" height="487" loading="lazy">
-      <p class="rodape__oab">Gael Chagas | Advogado | OAB/PA nº 34396</p>
+      <img class="rodape__logo" src="assets/logo-vertical-claro.webp" alt="Gael Chagas Advogado" width="1000" height="913" loading="lazy">
+      <p class="rodape__oab">Gael Chagas · Advogado · OAB/PA nº 34396</p>
       <p class="rodape__legal">Este site tem caráter exclusivamente informativo, em conformidade com o Código de Ética e Disciplina da OAB e o Provimento nº 205/2021. O conteúdo não constitui aconselhamento jurídico nem promessa de resultado.</p>
     </div>
   </footer>
+
+  <a class="flutuante" data-whatsapp href="#contato" aria-label="Falar pelo WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3Zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.6 3.6 0 0 0-1.1 2.7 6.3 6.3 0 0 0 1.3 3.3 14.4 14.4 0 0 0 5.5 4.9c2 .9 2.8.9 3.9.8a3.3 3.3 0 0 0 2.2-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.2-.3-.3-.6-.4Z"/></svg>
+  </a>
 
   <script src="script.js"></script>
 </body>
