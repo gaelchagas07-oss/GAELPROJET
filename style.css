@@ -1,0 +1,97 @@
+:root {
+  --tinta: #12161f;
+  --tinta-2: #1b2130;
+  --papel: #f6f3ee;
+  --texto: #232832;
+  --suave: #5b6270;
+  --ouro: #b08d57;
+  --linha: #ddd6c9;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--texto);
+  background: var(--papel);
+  line-height: 1.65;
+}
+a { color: inherit; }
+.container { width: min(1080px, 100% - 40px); margin-inline: auto; }
+.container--estreito { width: min(760px, 100% - 40px); }
+
+/* Topo */
+.topo {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--tinta); color: #fff;
+  border-bottom: 1px solid #ffffff1a;
+}
+.topo__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; }
+.marca { text-decoration: none; font-family: var(--serif); font-size: 1.15rem; letter-spacing: .02em; }
+.marca small { display: block; font-family: var(--sans); font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--ouro); }
+.menu { display: flex; gap: 22px; align-items: center; font-size: .9rem; }
+.menu a { text-decoration: none; opacity: .85; }
+.menu a:hover { opacity: 1; }
+.menu__cta { border: 1px solid var(--ouro); padding: 6px 14px; border-radius: 2px; opacity: 1 !important; }
+
+/* Hero */
+.hero { background: linear-gradient(160deg, var(--tinta), var(--tinta-2)); color: #fff; padding: 96px 0 88px; }
+.hero__inner { max-width: 760px; }
+.eyebrow { color: var(--ouro); letter-spacing: .2em; text-transform: uppercase; font-size: .78rem; margin: 0 0 18px; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.2; }
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin: 0 0 22px; }
+.hero__lead { font-size: 1.1rem; color: #d3d6dd; margin: 0 0 34px; }
+.hero__nota { font-size: .82rem; color: #a5abb8; margin: 14px 0 0; }
+
+.btn {
+  display: inline-block; background: var(--ouro); color: #14110b;
+  padding: 14px 28px; border-radius: 2px; text-decoration: none;
+  font-weight: 600; letter-spacing: .02em;
+  transition: filter .15s;
+}
+.btn:hover { filter: brightness(1.1); }
+.btn:focus-visible, a:focus-visible, summary:focus-visible { outline: 2px solid var(--ouro); outline-offset: 3px; }
+
+/* Seções */
+.secao { padding: 80px 0; }
+.secao--escura { background: var(--tinta); color: #fff; }
+.secao--clara { background: #fff; }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin: 0 0 12px; }
+.secao__intro { color: var(--suave); margin: 0 0 40px; }
+.secao--escura .secao__intro { color: #b9bfcc; }
+
+.grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.card { background: #fff; border: 1px solid var(--linha); border-top: 3px solid var(--ouro); padding: 26px; }
+.card h3 { margin: 0 0 8px; font-size: 1.2rem; }
+.card p { margin: 0; color: var(--suave); font-size: .96rem; }
+
+.passos { padding-left: 1.2rem; max-width: 720px; margin: 28px 0; }
+.passos li { margin-bottom: 14px; color: #d3d6dd; }
+.passos strong { color: #fff; }
+.aviso { border-left: 3px solid var(--ouro); padding-left: 14px; color: #b9bfcc; font-size: .92rem; max-width: 720px; }
+
+.sobre { display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: start; }
+.sobre__foto { aspect-ratio: 4/5; background: var(--linha); display: grid; place-items: center; color: var(--suave); letter-spacing: .15em; }
+
+details { border-bottom: 1px solid var(--linha); padding: 18px 0; }
+summary { cursor: pointer; font-weight: 600; }
+details p { margin: 12px 0 0; color: var(--suave); }
+
+.contato .btn { margin-bottom: 28px; }
+.dados { list-style: none; padding: 0; margin: 0; color: #d3d6dd; }
+.dados li { margin-bottom: 6px; }
+
+.rodape { background: #0b0e14; color: #9aa1af; padding: 36px 0; font-size: .85rem; }
+.rodape strong { color: #fff; }
+.rodape__legal { max-width: 760px; font-size: .78rem; }
+
+@media (max-width: 720px) {
+  .menu a:not(.menu__cta) { display: none; }
+  .hero { padding: 64px 0; }
+  .secao { padding: 56px 0; }
+  .sobre { grid-template-columns: 1fr; gap: 24px; }
+  .sobre__foto { max-width: 240px; }
+}
