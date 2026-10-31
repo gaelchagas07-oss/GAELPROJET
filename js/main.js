@@ -30,7 +30,7 @@ const CONFIG = {
   addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 
   /* Reveal ao rolar (com atraso escalonado em grades) */
-  $$('.cards,.method,.pillars,.chips,.facts').forEach(g => $$('.reveal, li, div', g).forEach((el, i) => el.style.setProperty('--d', (i % 3) * 0.09 + 's')));
+  $$('.method,.pillars,.facts').forEach(g => $$('.reveal, li, div', g).forEach((el, i) => el.style.setProperty('--d', (i % 3) * 0.09 + 's')));
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12, rootMargin: '0px 0px -6% 0px' });
     $$('.reveal').forEach(el => io.observe(el));
