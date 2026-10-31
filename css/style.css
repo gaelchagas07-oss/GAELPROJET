@@ -413,3 +413,22 @@ h2 .gold-text{background:none;color:var(--gold-500);-webkit-text-fill-color:var(
 .pat-c{opacity:.045}
 .burger{border-radius:2px}
 .frame .frame-mark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:52%;width:auto}
+
+/* ═══ Telas médias e pequenas: manter monograma e barra institucional ═══ */
+@media (max-width:900px){
+  .topbar{display:block}
+  .hero{padding-top:150px}
+  .hero-mark{display:block;order:-1;width:max-content;aspect-ratio:auto;margin:0 0 -4px}
+  .hero-mark .mono{height:170px}
+  .hero-mark .ring{display:none}
+  .hero-mark::before{inset:-45% -110%;opacity:.10}
+  .hero-glow{width:360px;height:360px;left:-60px;right:auto;top:200px;translate:none}
+  .nav{inset:114px 0 auto 0}
+  .site-header.scrolled .nav{inset:76px 0 auto 0}
+}
+@media (max-width:640px){
+  .topbar{display:none}
+  .hero{padding-top:112px}
+  .hero-mark .mono{height:120px}
+  .nav,.site-header.scrolled .nav{inset:76px 0 auto 0}
+}
