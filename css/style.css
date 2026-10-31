@@ -92,7 +92,6 @@ section[id]{scroll-margin-top:76px}
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:130px 0 100px;overflow:hidden;background:var(--ink-1000) url(../assets/textura.jpg) center/cover no-repeat}
 .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 72% 48%,rgba(14,42,92,.30),transparent 70%),linear-gradient(90deg,rgba(0,1,6,.94) 0%,rgba(0,1,6,.62) 48%,rgba(0,1,6,.35) 100%),linear-gradient(180deg,rgba(0,1,6,.5),transparent 25%,transparent 70%,var(--ink-950))}
 .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 50%,transparent 45%,rgba(0,0,0,.75));pointer-events:none}
-.dust{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
 .hero-glow{position:absolute;z-index:1;width:620px;height:620px;right:6%;top:50%;translate:0 -50%;background:radial-gradient(circle,rgba(225,169,73,.20),transparent 62%);filter:blur(30px);animation:breathe 6s ease-in-out infinite}
 @keyframes breathe{50%{opacity:.55;scale:1.08}}
 .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:40px}
@@ -110,8 +109,6 @@ section[id]{scroll-margin-top:76px}
 .ring{position:absolute;border:1px solid rgba(225,169,73,.22);border-radius:50%;inset:0;margin:auto}
 .r1{width:62%;aspect-ratio:1}.r2{width:84%;aspect-ratio:1;border-style:dashed;border-color:rgba(225,169,73,.14);animation:spin 80s linear infinite}.r3{width:106%;aspect-ratio:1;border-color:rgba(225,169,73,.08)}
 @keyframes spin{to{transform:rotate(360deg)}}
-.tag{position:absolute;z-index:3;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:rgba(5,13,29,.7);backdrop-filter:blur(8px);font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-300);animation:float 7s ease-in-out infinite}
-.tag-a{top:14%;left:-4%;animation-delay:-1s}.tag-b{top:52%;right:-6%;animation-delay:-3s}.tag-c{bottom:8%;left:6%;animation-delay:-5s}
 .scroll-hint{position:absolute;z-index:3;bottom:28px;left:50%;translate:-50% 0;width:26px;height:44px;border:1px solid rgba(225,169,73,.5);border-radius:14px}
 .scroll-hint span{position:absolute;left:50%;top:8px;width:3px;height:8px;margin-left:-1.5px;border-radius:2px;background:var(--gold-300);animation:wheel 1.8s infinite}
 @keyframes wheel{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(16px)}}
@@ -343,3 +340,75 @@ section[id]{scroll-margin-top:76px}
 .frame{background-blend-mode:normal}
 .frame .pat{opacity:.12}
 @media (max-width:640px){.pat{background-size:340px auto;opacity:.06}.strip{height:40px;background-size:170px auto}}
+
+/* ═══ REFINAMENTO INSTITUCIONAL ═══
+   menos efeito, mais sobriedade: cantos retos, dourado sólido nos títulos,
+   menos caixa-alta espaçada, movimento mínimo. */
+:root{--r:3px}
+.btn{border-radius:2px;letter-spacing:.1em;font-size:12.5px;--h:52px}
+.btn-sm{--h:40px}
+.btn-gold{background:linear-gradient(180deg,#E8BC62,#DCA946 55%,#C7923A);box-shadow:0 8px 24px -12px rgba(220,169,70,.6),inset 0 1px 0 rgba(255,255,255,.35)}
+.btn-gold:hover{transform:none;box-shadow:0 10px 28px -10px rgba(220,169,70,.7),inset 0 1px 0 rgba(255,255,255,.45);filter:brightness(1.05)}
+.btn-ghost:hover{transform:none}
+/* topo institucional */
+.topbar{border-bottom:1px solid rgba(220,169,70,.14);background:rgba(0,1,6,.55);max-height:38px;overflow:hidden;transition:max-height .35s var(--ease),opacity .3s}
+.topbar-in{display:flex;justify-content:space-between;align-items:center;height:38px;font:500 11.5px/1 var(--sans);letter-spacing:.06em;color:#9aa0b0}
+.topbar-in span:last-child{display:flex;align-items:center;gap:16px}
+.topbar-in i{width:1px;height:12px;background:rgba(220,169,70,.3)}
+.topbar a:hover{color:var(--gold-300)}
+.site-header.scrolled .topbar{max-height:0;opacity:0;border:0}
+.hero{padding-top:160px}
+/* títulos: degradê só no hero; nas seções, dourado sólido */
+h2 .gold-text{background:none;color:var(--gold-500);-webkit-text-fill-color:var(--gold-500)}
+.sec-head h2,.about h2,.contact h2{font-size:clamp(32px,3.8vw,50px);font-weight:500;line-height:1.12}
+.sec-head{gap:18px}
+.eyebrow{letter-spacing:.24em;font-size:11px}
+.nav{gap:30px}.nav a:not(.btn){letter-spacing:.02em;font-size:12px;text-transform:none;font-size:14px;font-weight:500}
+.nav a:not(.btn)::after{display:none}
+.nav a:not(.btn).active{color:var(--gold-300)}
+.hero-badges li,.tablist button{letter-spacing:.06em}
+.hero-badges li{text-transform:none;font-size:14px;font-weight:500}
+.lead{color:#bfc4cf}
+/* hero estático e limpo */
+.hero-mark .mono{animation:none;filter:drop-shadow(0 0 22px rgba(220,169,70,.4)) drop-shadow(0 24px 40px rgba(0,0,0,.8))}
+.hero-glow{animation:none;opacity:.8}
+.hero-mark::before{animation:none;opacity:.12}
+.r1{width:78%;border-color:rgba(220,169,70,.16)}
+/* cards */
+.card{border-radius:var(--r);padding:34px 30px;background:linear-gradient(180deg,rgba(15,34,48,.55),rgba(5,12,20,.85));border-color:rgba(220,169,70,.12)}
+.card::before{display:none}
+.card::after{width:36px;height:1px;left:30px;top:0;transition:width .5s var(--ease)}
+.card:hover{transform:none;border-color:rgba(220,169,70,.35);box-shadow:none}
+.card:hover::after{width:calc(100% - 60px)}
+.ico{width:38px;height:38px;filter:none;stroke-width:1.2;margin-bottom:24px}
+.card h3{font-size:24px;font-weight:600}
+.chips i{border-radius:2px;font-size:13.5px}
+/* fases, plantão, método, faq, form: cantos retos */
+.phases,.steps,.dont,.form,.faq details,.busca,.pillars div,.frame{border-radius:var(--r)}
+.form::before{border-radius:2px}
+.form::after{border-top-right-radius:2px}
+.tablist button{text-transform:none;font-size:15px;font-weight:500}
+.dont{border-color:rgba(220,169,70,.2);background:linear-gradient(180deg,rgba(15,34,48,.5),rgba(5,12,20,.9))}
+.dont h3{color:var(--gold-300)}
+.dont li::before{color:var(--gold-700)}
+.plantao::before{background:radial-gradient(55% 45% at 90% 20%,rgba(14,42,92,.25),transparent 70%)}
+.steps li::before{box-shadow:none}
+.num{box-shadow:0 0 0 8px var(--ink-900)}
+.pillars div:hover{transform:none}
+.faq summary{font-size:21px;font-weight:600}
+/* sobre: foto real quando existir */
+.frame{background:linear-gradient(180deg,#0F2230,#050c14)}
+.frame::before{background:radial-gradient(circle at 50% 40%,rgba(220,169,70,.10),transparent 60%)}
+.frame .frame-mark{position:relative;z-index:1;width:auto;height:46%;filter:drop-shadow(0 0 18px rgba(220,169,70,.35))}
+.frame .photo{position:absolute;inset:0;z-index:2;width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.frame::after{z-index:3}
+/* whatsapp flutuante discreto */
+.fab::before{display:none}
+.fab{width:56px;height:56px}.fab:hover{transform:none;filter:brightness(1.06)}
+.fab svg{width:27px;height:27px}
+/* movimento mínimo */
+.js .reveal{transform:translateY(14px);transition-duration:.7s}
+@media (max-width:900px){.topbar{display:none}.hero{padding-top:120px}.nav a:not(.btn){font-size:15px}}
+.frame .pat{opacity:.06}
+.pat-c{opacity:.045}
+.burger{border-radius:2px}

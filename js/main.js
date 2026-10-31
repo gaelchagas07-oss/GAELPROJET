@@ -44,13 +44,6 @@ const CONFIG = {
   }), { rootMargin: '-45% 0px -50% 0px' });
   secs.forEach(s => spy.observe(s));
 
-  /* Spotlight nos cards */
-  $$('.card').forEach(c => c.addEventListener('pointermove', e => {
-    const r = c.getBoundingClientRect();
-    c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
-    c.style.setProperty('--my', (e.clientY - r.top) + 'px');
-  }));
-
   /* Abas (fases) — acessível por teclado */
   const tabs = $$('[role=tab]');
   const select = (t, focus) => {
@@ -90,25 +83,4 @@ const CONFIG = {
   });
   $$('.field input,.field select').forEach(el => el.addEventListener('input', () => el.classList.remove('invalid')));
 
-  /* Poeira dourada no hero */
-  const cv = $('#dust');
-  if (cv && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const ctx = cv.getContext('2d'); let W, H, ps = [], raf, vis = true;
-    const resize = () => { const d = Math.min(devicePixelRatio || 1, 2); W = cv.width = cv.offsetWidth * d; H = cv.height = cv.offsetHeight * d; ps = Array.from({ length: Math.round(Math.min(70, cv.offsetWidth / 18)) }, () => mk(true, d)); };
-    const mk = (init, d = 1) => ({ x: Math.random() * W, y: init ? Math.random() * H : H + 10, r: (Math.random() * 1.6 + .4) * d, vy: (Math.random() * .25 + .06) * d, vx: (Math.random() - .5) * .12 * d, a: Math.random() * .6 + .2, t: Math.random() * 6.28 });
-    const tick = () => {
-      if (!vis) return;
-      ctx.clearRect(0, 0, W, H);
-      for (const p of ps) {
-        p.y -= p.vy; p.x += p.vx + Math.sin(p.t += .01) * .15; if (p.y < -10) Object.assign(p, mk(false, W / cv.offsetWidth));
-        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 4);
-        const al = p.a * (.6 + .4 * Math.sin(p.t * 3));
-        g.addColorStop(0, `rgba(255,232,153,${al})`); g.addColorStop(1, 'rgba(225,169,73,0)');
-        ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x, p.y, p.r * 4, 0, 6.283); ctx.fill();
-      }
-      raf = requestAnimationFrame(tick);
-    };
-    new IntersectionObserver(([e]) => { vis = e.isIntersecting; if (vis) tick(); }).observe(cv);
-    addEventListener('resize', resize); resize(); tick();
-  }
 })();
