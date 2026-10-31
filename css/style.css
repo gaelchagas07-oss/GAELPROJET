@@ -11,8 +11,8 @@
    ouro metálico + azul-marinho profundo texturizado
    ═══════════════════════════════════════════════ */
 :root{
-  --gold-700:#A06A2F; --gold-500:#E1A949; --gold-300:#FDDC7D; --gold-100:#FFE899;
-  --ink-1000:#000106; --ink-950:#02060F; --ink-900:#050D1D; --ink-800:#0A1428; --ink-700:#11192C; --ink-600:#1A2438;
+  --gold-700:#A06A2F; --gold-500:#DCA946; --gold-300:#FDDC7D; --gold-100:#FFE899;
+  --ink-1000:#000106; --ink-950:#030A11; --ink-900:#07141F; --ink-800:#0A1428; --ink-700:#11192C; --ink-600:#1A2438;
   --navy-glow:#0E2A5C;
   --txt:#ECE8DC; --muted:#A9AEBD; --line:rgba(225,169,73,.22);
   --gold-grad:linear-gradient(135deg,#A06A2F 0%,#E1A949 26%,#FFE899 50%,#E1A949 74%,#A06A2F 100%);
@@ -330,3 +330,16 @@ section[id]{scroll-margin-top:76px}
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .js .reveal{opacity:1;transform:none}
 }
+
+/* ═══ PATTERN OFICIAL DA MARCA ═══ */
+.pat{position:absolute;inset:0;z-index:0;pointer-events:none;background:url(../assets/pattern-linhas.png) 0 0/460px auto repeat;opacity:.075}
+.pat-r{-webkit-mask-image:linear-gradient(270deg,#000 0%,rgba(0,0,0,.55) 35%,transparent 72%);mask-image:linear-gradient(270deg,#000 0%,rgba(0,0,0,.55) 35%,transparent 72%)}
+.pat-l{-webkit-mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.55) 35%,transparent 72%);mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.55) 35%,transparent 72%)}
+.pat-c{-webkit-mask-image:radial-gradient(70% 60% at 50% 50%,transparent 30%,#000 100%);mask-image:radial-gradient(70% 60% at 50% 50%,transparent 30%,#000 100%)}
+.strip{height:54px;background:#030A11 url(../assets/pattern-faixa.png) 0 40%/240px auto repeat-x;border-block:1px solid rgba(220,169,70,.45);position:relative;box-shadow:0 0 40px -10px rgba(220,169,70,.35)}
+.strip::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#030A11,transparent 18%,transparent 82%,#030A11)}
+.hero-mark::before{content:"";position:absolute;inset:-4%;border-radius:50%;background:url(../assets/pattern-linhas.png) center/330px auto;opacity:.16;-webkit-mask-image:radial-gradient(circle,#000 18%,transparent 66%);mask-image:radial-gradient(circle,#000 18%,transparent 66%);animation:spin 160s linear infinite reverse}
+.form::after{content:"";position:absolute;right:8px;top:8px;width:170px;height:170px;border-top-right-radius:14px;background:url(../assets/pattern-linhas.png) right top/150px auto;opacity:.22;-webkit-mask-image:radial-gradient(circle at 100% 0,#000,transparent 70%);mask-image:radial-gradient(circle at 100% 0,#000,transparent 70%);pointer-events:none}
+.frame{background-blend-mode:normal}
+.frame .pat{opacity:.12}
+@media (max-width:640px){.pat{background-size:340px auto;opacity:.06}.strip{height:40px;background-size:170px auto}}

@@ -1,7 +1,7 @@
 /* ═══ CONFIGURAÇÃO — edite aqui ═══ */
 const CONFIG = {
-  whatsapp: '5500000000000',            // DDI + DDD + número, só dígitos (ex.: 5511999999999)
-  telefone: '(00) 00000-0000',          // como será exibido
+  whatsapp: '5591980814834',            // DDI + DDD + número, só dígitos (ex.: 5511999999999)
+  telefone: '(91) 98081-4834',          // como será exibido
   mensagemPadrao: 'Olá, Dr. Gael. Vim pelo site e preciso de orientação jurídica criminal.'
 };
 
