@@ -412,3 +412,4 @@ h2 .gold-text{background:none;color:var(--gold-500);-webkit-text-fill-color:var(
 .frame .pat{opacity:.06}
 .pat-c{opacity:.045}
 .burger{border-radius:2px}
+.frame .frame-mark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:52%;width:auto}
