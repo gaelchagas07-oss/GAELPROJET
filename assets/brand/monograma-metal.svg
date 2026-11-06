@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="198.588 57.177 42.795 89.538" role="img"><title>Gael Chagas</title>
+<defs>
+<path id="m" d="M 209.453125 58.277344 L 239.855469 58.277344 L 239.855469 64.601562 L 237.613281 64.601562 L 237.628906 80.71875 L 231.3125 82.527344 L 231.285156 64.601562 L 218.023438 64.601562 L 218.023438 68.652344 L 230.09375 68.652344 L 230.09375 74.980469 L 227.847656 74.980469 L 227.765625 97.492188 L 221.445312 99.300781 L 221.523438 74.980469 L 218.023438 74.980469 L 218.050781 100.367188 C 215.855469 100.949219 213.910156 101.574219 211.726562 102.171875 L 211.699219 74.980469 L 208.257812 74.980469 L 208.285156 138.890625 L 221.550781 138.890625 L 221.550781 134.839844 L 209.480469 134.839844 L 209.480469 128.511719 L 211.726562 128.511719 L 211.726562 112.660156 L 218.050781 110.871094 L 218.050781 128.511719 L 221.550781 128.511719 L 221.550781 108.003906 L 211.726562 110.785156 L 211.726562 104.359375 L 227.875 99.945312 L 227.875 128.511719 L 231.3125 128.511719 L 231.355469 109.210938 L 237.640625 107.421875 L 237.640625 128.511719 L 239.882812 128.511719 L 239.882812 134.839844 L 227.875 134.839844 L 227.875 138.890625 L 230.117188 138.890625 L 230.117188 145.214844 L 199.714844 145.214844 L 199.714844 138.890625 L 201.960938 138.890625 L 201.933594 74.980469 L 199.6875 74.980469 L 199.6875 68.652344 L 211.699219 68.652344 L 211.699219 64.601562 L 209.453125 64.601562 Z M 231.316406 84.777344 L 237.632812 82.964844 L 237.636719 105.085938 L 231.351562 106.875 Z M 231.316406 84.777344 "/>
+<linearGradient id="face" x1="0" y1="0" x2=".7" y2="1">
+<stop offset="0" stop-color="#FFE9A6"/><stop offset=".18" stop-color="#F0C766"/><stop offset=".38" stop-color="#D9A045"/>
+<stop offset=".5" stop-color="#FFF3C4"/><stop offset=".6" stop-color="#E7B356"/><stop offset=".82" stop-color="#B9802F"/><stop offset="1" stop-color="#E9BE62"/>
+</linearGradient>
+<linearGradient id="lado" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#7A4E1C"/><stop offset=".5" stop-color="#5C3A14"/><stop offset="1" stop-color="#3E270D"/>
+</linearGradient>
+<clipPath id="cp"><use href="#m"/></clipPath>
+</defs>
+<use href="#m" transform="translate(1.04 1.28)" fill="url(#lado)"/><use href="#m" transform="translate(0.91 1.12)" fill="url(#lado)"/><use href="#m" transform="translate(0.78 0.96)" fill="url(#lado)"/><use href="#m" transform="translate(0.65 0.80)" fill="url(#lado)"/><use href="#m" transform="translate(0.52 0.64)" fill="url(#lado)"/><use href="#m" transform="translate(0.39 0.48)" fill="url(#lado)"/><use href="#m" transform="translate(0.26 0.32)" fill="url(#lado)"/><use href="#m" transform="translate(0.13 0.16)" fill="url(#lado)"/>
+<use href="#m" fill="url(#face)"/>
+<g clip-path="url(#cp)" fill="none">
+<use href="#m" stroke="#FFF6D2" stroke-opacity=".75" stroke-width=".55" transform="translate(-.12 -.14)"/>
+<use href="#m" stroke="#6B4418" stroke-opacity=".55" stroke-width=".5" transform="translate(.14 .16)"/>
+</g>
+</svg>
