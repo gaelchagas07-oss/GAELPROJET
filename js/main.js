@@ -44,6 +44,18 @@ const CONFIG = {
   }), { rootMargin: '-45% 0px -50% 0px' });
   secs.forEach(s => spy.observe(s));
 
+  /* Monograma 3D: inclina levemente com o mouse (como o giro de câmera do vídeo) */
+  const wrap = $('.mono-wrap'), hero = $('.hero');
+  if (wrap && hero && matchMedia('(hover: hover) and (prefers-reduced-motion: no-preference)').matches) {
+    hero.addEventListener('pointermove', e => {
+      const r = hero.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      wrap.style.setProperty('--ry', (x * 14).toFixed(2) + 'deg');
+      wrap.style.setProperty('--rx', (-y * 10).toFixed(2) + 'deg');
+    });
+    hero.addEventListener('pointerleave', () => { wrap.style.setProperty('--ry', '0deg'); wrap.style.setProperty('--rx', '0deg'); });
+  }
+
   /* Abas (fases) — acessível por teclado */
   const tabs = $$('[role=tab]');
   const select = (t, focus) => {

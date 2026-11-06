@@ -564,3 +564,45 @@ h1,h2,h3,h4{font-weight:500;letter-spacing:-.01em;line-height:1.18}
   /* o advogado: quadro do monograma menor */
   .about-mark .frame{max-width:240px}
 }
+
+/* ═══════════ CARACTERÍSTICAS DO VÍDEO DA MARCA ═══════════ */
+/* 1. Abertura saindo do preto */
+.hero-curtain{position:absolute;inset:0;z-index:6;background:#000;pointer-events:none;animation:curtain 1.6s ease .15s forwards}
+@keyframes curtain{to{opacity:0;visibility:hidden}}
+/* 2. Luz azul vindo de cima */
+.hero-spot{position:absolute;z-index:1;pointer-events:none;top:-18%;left:52%;width:56%;height:80%;
+  background:radial-gradient(50% 55% at 50% 0%,rgba(46,98,190,.42),rgba(24,60,130,.16) 45%,transparent 72%);filter:blur(8px);mix-blend-mode:screen;animation:spot 9s ease-in-out infinite alternate}
+@keyframes spot{to{opacity:.7;transform:translateX(-3%)}}
+/* 3. Pontos de luz no fundo */
+.specks{position:absolute;inset:0;z-index:1;pointer-events:none}
+.specks i{position:absolute;left:var(--x);top:var(--y);width:3px;height:3px;border-radius:50%;background:#fff3cf;box-shadow:0 0 8px 2px rgba(255,232,153,.55);opacity:0;animation:twinkle 6s ease-in-out var(--d) infinite}
+@keyframes twinkle{0%,100%{opacity:0;transform:scale(.6)}45%{opacity:.85;transform:scale(1)}60%{opacity:.2}}
+/* 4. Monograma em ouro 3D: entrada com giro de câmera, leve inclinação e reflexo de luz */
+.mono-wrap{position:relative;z-index:2;transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.mono-3d{position:relative;display:block;animation:monoIn 2.4s cubic-bezier(.16,.8,.2,1) .35s both}
+@keyframes monoIn{
+  0%{opacity:0;transform:perspective(1100px) rotateY(-42deg) rotateX(10deg) scale(1.28) translateX(-6%);filter:brightness(.25)}
+  60%{opacity:1;filter:brightness(1.15)}
+  100%{opacity:1;transform:none;filter:brightness(1)}}
+.hero-mark .mono{display:block;filter:drop-shadow(1px 1px 0 #8a5a22) drop-shadow(2px 2px 0 #6b4418) drop-shadow(3px 3px 0 #4a2f10) drop-shadow(0 0 26px rgba(220,169,70,.42)) drop-shadow(0 28px 40px rgba(0,0,0,.85))}
+.mono-shine{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,transparent 38%,rgba(255,250,225,.0) 42%,rgba(255,250,225,.85) 50%,rgba(255,250,225,0) 58%,transparent 62%) 0 0/300% 100% no-repeat;
+  -webkit-mask:url(../assets/monograma.webp) center/100% 100% no-repeat;mask:url(../assets/monograma.webp) center/100% 100% no-repeat;
+  mix-blend-mode:overlay;animation:sweep 7s ease-in-out 2.6s infinite;background-position:120% 0}
+@keyframes sweep{0%{background-position:120% 0}22%,100%{background-position:-20% 0}}
+/* 5. Pedra texturizada do vídeo nos fundos escuros (no lugar do ruído genérico) */
+.sec::after,.band::after,.cta-band::after,.footer::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:url(../assets/textura.webp) center/cover no-repeat;mix-blend-mode:screen;opacity:.22}
+.about::after{opacity:.14}
+.band>*,.cta-band>*,.footer>*{position:relative;z-index:1}
+.band .col-pat{position:absolute}
+.footer .col-pat{position:absolute}
+/* 6. Reflexo de luz passando pelo dourado dos títulos quando aparecem */
+h2 .gold-text,.cta-in h2 em{background:linear-gradient(100deg,#DCA946 0%,#DCA946 42%,#FFF0C2 50%,#DCA946 58%,#DCA946 100%) 100% 0/300% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.in h2 .gold-text,h2.in .gold-text,.in.cta-in h2 em{animation:goldSweep 1.8s ease .4s both}
+@keyframes goldSweep{from{background-position:100% 0}to{background-position:0 0}}
+.hero h1 .gold-text{background-size:200% 100%;animation:heroGold 8s ease-in-out 2.4s infinite}
+@keyframes heroGold{0%,100%{background-position:0 0}50%{background-position:100% 0}}
+@media (max-width:900px){.hero-spot{left:10%;width:90%;height:60%}.mono-3d{animation-duration:1.8s}}
+@media (prefers-reduced-motion:reduce){.hero-curtain{display:none}.specks{display:none}.mono-shine{display:none}}
