@@ -84,7 +84,7 @@ section[id]{scroll-margin-top:76px}
 .sub{color:var(--muted);font-size:17px;max-width:62ch}
 
 /* ── Hero ── */
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:130px 0 100px;overflow:hidden;background:var(--ink-1000) url(../assets/textura.jpg) center/cover no-repeat}
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:130px 0 100px;overflow:hidden;background:var(--ink-1000) url(../assets/textura.webp) center/cover no-repeat}
 .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 60% at 72% 48%,rgba(14,42,92,.30),transparent 70%),linear-gradient(90deg,rgba(0,1,6,.94) 0%,rgba(0,1,6,.62) 48%,rgba(0,1,6,.35) 100%),linear-gradient(180deg,rgba(0,1,6,.5),transparent 25%,transparent 70%,var(--ink-950))}
 .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 50%,transparent 45%,rgba(0,0,0,.75));pointer-events:none}
 .hero-glow{position:absolute;z-index:1;width:620px;height:620px;right:6%;top:50%;translate:0 -50%;background:radial-gradient(circle,rgba(225,169,73,.20),transparent 62%);filter:blur(30px);animation:breathe 6s ease-in-out infinite}
@@ -192,7 +192,7 @@ section[id]{scroll-margin-top:76px}
 /* ── Sobre ── */
 .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(36px,6vw,90px);align-items:center}
 .about-mark{margin:0;display:grid;gap:22px;justify-items:center}
-.frame{position:relative;width:100%;max-width:470px;aspect-ratio:1/1.12;display:grid;place-items:center;border:1px solid var(--line);border-radius:6px;background:url(../assets/textura.jpg) center/cover;overflow:hidden}
+.frame{position:relative;width:100%;max-width:470px;aspect-ratio:1/1.12;display:grid;place-items:center;border:1px solid var(--line);border-radius:6px;background:url(../assets/textura.webp) center/cover;overflow:hidden}
 .frame::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,rgba(14,42,92,.4),rgba(0,1,6,.75))}
 .frame::after{content:"";position:absolute;inset:14px;border:1px solid rgba(225,169,73,.35);pointer-events:none}
 .frame img{position:relative;z-index:1;width:72%;filter:drop-shadow(0 0 24px rgba(225,169,73,.45))}
@@ -309,12 +309,12 @@ section[id]{scroll-margin-top:76px}
 }
 
 /* ═══ PATTERN OFICIAL DA MARCA ═══ */
-.pat{position:absolute;inset:0;z-index:0;pointer-events:none;background:url(../assets/pattern-linhas.png) 0 0/460px auto repeat;opacity:.075}
+.pat{position:absolute;inset:0;z-index:0;pointer-events:none;background:url(../assets/pattern-linhas.webp) 0 0/460px auto repeat;opacity:.075}
 .pat-r{-webkit-mask-image:linear-gradient(270deg,#000 0%,rgba(0,0,0,.55) 35%,transparent 72%);mask-image:linear-gradient(270deg,#000 0%,rgba(0,0,0,.55) 35%,transparent 72%)}
 .pat-l{-webkit-mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.55) 35%,transparent 72%);mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.55) 35%,transparent 72%)}
 .pat-c{-webkit-mask-image:radial-gradient(70% 60% at 50% 50%,transparent 30%,#000 100%);mask-image:radial-gradient(70% 60% at 50% 50%,transparent 30%,#000 100%)}
-.hero-mark::before{content:"";position:absolute;inset:-4%;border-radius:50%;background:url(../assets/pattern-linhas.png) center/330px auto;opacity:.16;-webkit-mask-image:radial-gradient(circle,#000 18%,transparent 66%);mask-image:radial-gradient(circle,#000 18%,transparent 66%);animation:spin 160s linear infinite reverse}
-.form::after{content:"";position:absolute;right:8px;top:8px;width:170px;height:170px;border-top-right-radius:14px;background:url(../assets/pattern-linhas.png) right top/150px auto;opacity:.22;-webkit-mask-image:radial-gradient(circle at 100% 0,#000,transparent 70%);mask-image:radial-gradient(circle at 100% 0,#000,transparent 70%);pointer-events:none}
+.hero-mark::before{content:"";position:absolute;inset:-4%;border-radius:50%;background:url(../assets/pattern-linhas.webp) center/330px auto;opacity:.16;-webkit-mask-image:radial-gradient(circle,#000 18%,transparent 66%);mask-image:radial-gradient(circle,#000 18%,transparent 66%);animation:spin 160s linear infinite reverse}
+.form::after{content:"";position:absolute;right:8px;top:8px;width:170px;height:170px;border-top-right-radius:14px;background:url(../assets/pattern-linhas.webp) right top/150px auto;opacity:.22;-webkit-mask-image:radial-gradient(circle at 100% 0,#000,transparent 70%);mask-image:radial-gradient(circle at 100% 0,#000,transparent 70%);pointer-events:none}
 .frame{background-blend-mode:normal}
 .frame .pat{opacity:.12}
 @media (max-width:640px){.pat{background-size:340px auto;opacity:.06}}
@@ -430,7 +430,7 @@ h2 .gold-text{background:none;color:var(--gold-500);-webkit-text-fill-color:var(
 .areas-layout .chips{margin-top:36px;padding-top:0;border-top:0}
 /* faixa de chamada */
 .cta-band{position:relative;background:#0F2230;border-block:1px solid rgba(220,169,70,.4);overflow:hidden}
-.cta-band::before{content:"";position:absolute;inset:0;background:url(../assets/pattern-linhas.png) 0 0/420px auto;opacity:.07}
+.cta-band::before{content:"";position:absolute;inset:0;background:url(../assets/pattern-linhas.webp) 0 0/420px auto;opacity:.07}
 .cta-in{position:relative;display:flex;align-items:center;justify-content:space-between;gap:40px;padding:64px 0}
 .cta-in h2{font-size:clamp(28px,3vw,40px);font-weight:500;max-width:22ch;color:#f6efd9}
 .cta-in h2 em{color:var(--gold-300);font-style:italic}
@@ -534,3 +534,33 @@ h1,h2,h3,h4{font-weight:500;letter-spacing:-.01em;line-height:1.18}
 .foot-col.col-l{left:max(8px,calc((100vw - 1200px) / 2 - 104px))}
 .foot-col.col-r{right:max(8px,calc((100vw - 1200px) / 2 - 104px))}
 @media (max-width:1400px){.foot-col{display:none}}
+
+/* ═══ O ADVOGADO: azul-petróleo da marca para quebrar a sequência escura ═══ */
+.about{background:linear-gradient(180deg,#0B1C29 0%,#183547 55%,#0F2533 100%);border-block:1px solid rgba(220,169,70,.18)}
+.about::before{background:radial-gradient(55% 60% at 15% 50%,rgba(220,169,70,.10),transparent 70%)}
+.about .frame{box-shadow:0 40px 80px -40px rgba(0,0,0,.8)}
+
+/* ═══ CELULAR: barra de contato fixa + página mais compacta ═══ */
+.mobile-bar{display:none}
+@media (max-width:640px){
+  .fab{display:none}
+  body{padding-bottom:64px}
+  .mobile-bar{display:grid;grid-template-columns:1.4fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:70;height:64px;background:rgba(2,6,15,.96);backdrop-filter:blur(10px);border-top:1px solid rgba(220,169,70,.35);padding:8px 10px calc(8px + env(safe-area-inset-bottom));gap:8px}
+  .mobile-bar a{display:flex;align-items:center;justify-content:center;gap:9px;border-radius:2px;font:600 12.5px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase}
+  .mobile-bar svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .mb-wa{background:linear-gradient(180deg,#E8BC62,#DCA946 55%,#C7923A);color:#1a1004}
+  .mb-tel{border:1px solid rgba(220,169,70,.5);color:var(--gold-300)}
+  /* método: passos em linha, pilares em 2x2 */
+  .method{grid-template-columns:1fr;row-gap:26px;margin-bottom:44px}
+  .method li{display:grid;grid-template-columns:52px 1fr;column-gap:16px;text-align:left;padding:0}
+  .method .num{grid-row:span 2;width:48px;height:48px;margin:2px 0 0;font-size:16px;box-shadow:none}
+  .method h3{font-size:17px;margin-bottom:6px}
+  .method p{font-size:14.5px}
+  .pillars{grid-template-columns:1fr 1fr;gap:12px;padding-top:34px}
+  .pillars div{padding:18px 16px}
+  .pillars svg{width:26px;height:26px;margin-bottom:10px}
+  .pillars h4{font-size:15px}
+  .pillars p{font-size:13px;line-height:1.55}
+  /* o advogado: quadro do monograma menor */
+  .about-mark .frame{max-width:240px}
+}
