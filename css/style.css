@@ -1,10 +1,5 @@
 /* Fontes locais */
-@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:swap;src:url(../assets/fonts/cormorant-500i.woff2) format('woff2');}
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url(../assets/fonts/cormorant-500.woff2) format('woff2');}
-@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url(../assets/fonts/cormorant-600.woff2) format('woff2');}
-@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;font-display:swap;src:url(../assets/fonts/montserrat-400.woff2) format('woff2');}
-@font-face{font-family:'Montserrat';font-style:normal;font-weight:500;font-display:swap;src:url(../assets/fonts/montserrat-500.woff2) format('woff2');}
-@font-face{font-family:'Montserrat';font-style:normal;font-weight:600;font-display:swap;src:url(../assets/fonts/montserrat-600.woff2) format('woff2');}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:100 900;font-display:swap;src:url(../assets/fonts/montserrat.woff2) format('woff2');}
 /* ═══════════════════════════════════════════════
    GAEL CHAGAS — ADVOGADO CRIMINALISTA
    Paleta extraída do vídeo da marca:
@@ -17,7 +12,7 @@
   --txt:#ECE8DC; --muted:#A9AEBD; --line:rgba(225,169,73,.22);
   --gold-grad:linear-gradient(135deg,#A06A2F 0%,#E1A949 26%,#FFE899 50%,#E1A949 74%,#A06A2F 100%);
   --gold-grad-h:linear-gradient(90deg,#A06A2F,#E1A949 30%,#FFE899 50%,#E1A949 70%,#A06A2F);
-  --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --serif:'Montserrat',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
   --sans:'Montserrat',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
   --r:14px; --ease:cubic-bezier(.22,.7,.2,1);
   --noise:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
@@ -258,19 +253,6 @@ section[id]{scroll-margin-top:76px}
 .form-note.err{color:#ff9d84}
 
 /* ── Footer ── */
-.footer{background:var(--ink-1000);border-top:1px solid var(--line);padding:70px 0 34px;position:relative}
-.footer::before{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:var(--gold-grad-h);opacity:.7}
-.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:48px;padding-bottom:46px}
-.foot-brand{display:grid;gap:14px;justify-items:start}
-.foot-brand img{width:150px}
-.foot-brand p{color:var(--muted);font-size:14px}
-.foot-nav{display:grid;gap:11px;align-content:start;justify-items:start}
-.foot-nav h4{font:600 11px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--gold-500);margin-bottom:8px}
-.foot-nav a{font-size:14.5px;color:#c3c8d4;transition:.25s}
-.foot-nav a:hover{color:var(--gold-300);padding-left:4px}
-.legal{padding-top:28px;border-top:1px solid rgba(225,169,73,.14);display:grid;gap:10px}
-.legal p{font-size:13px;color:#d2cfc2}
-.legal .small{font-size:11.5px;color:#7f8599;line-height:1.7;max-width:96ch}
 
 /* ── WhatsApp flutuante ── */
 .fab{position:fixed;right:22px;bottom:22px;z-index:60;width:62px;height:62px;border-radius:50%;display:grid;place-items:center;background:var(--gold-grad);box-shadow:0 14px 34px -8px rgba(225,169,73,.7),0 0 0 1px rgba(255,255,255,.25) inset;transition:transform .35s var(--ease)}
@@ -308,7 +290,6 @@ section[id]{scroll-margin-top:76px}
   .tablist button{flex:none;padding:20px 22px;border-bottom:0;border-right:1px solid rgba(225,169,73,.1)}
   .tablist button::before{inset:auto 0 0 0;width:auto;height:3px;transform:scaleX(0)}
   .tablist button[aria-selected=true]::before{transform:scaleX(1)}
-  .foot-grid{grid-template-columns:1fr 1fr}.foot-brand{grid-column:1/-1}
 }
 @media (max-width:640px){
   body{font-size:15.5px}
@@ -320,7 +301,6 @@ section[id]{scroll-margin-top:76px}
   .card{padding:28px 24px}
   .faq summary{font-size:19px;padding:18px 18px}.faq details p{padding:0 18px 22px}
   .fab{right:16px;bottom:16px;width:56px;height:56px}
-  .foot-grid{grid-template-columns:1fr;gap:34px}
   .brand-txt strong{font-size:20px}
 }
 @media (prefers-reduced-motion:reduce){
@@ -333,13 +313,11 @@ section[id]{scroll-margin-top:76px}
 .pat-r{-webkit-mask-image:linear-gradient(270deg,#000 0%,rgba(0,0,0,.55) 35%,transparent 72%);mask-image:linear-gradient(270deg,#000 0%,rgba(0,0,0,.55) 35%,transparent 72%)}
 .pat-l{-webkit-mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.55) 35%,transparent 72%);mask-image:linear-gradient(90deg,#000 0%,rgba(0,0,0,.55) 35%,transparent 72%)}
 .pat-c{-webkit-mask-image:radial-gradient(70% 60% at 50% 50%,transparent 30%,#000 100%);mask-image:radial-gradient(70% 60% at 50% 50%,transparent 30%,#000 100%)}
-.strip{height:54px;background:#030A11 url(../assets/pattern-faixa.png) 0 40%/240px auto repeat-x;border-block:1px solid rgba(220,169,70,.45);position:relative;box-shadow:0 0 40px -10px rgba(220,169,70,.35)}
-.strip::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#030A11,transparent 18%,transparent 82%,#030A11)}
 .hero-mark::before{content:"";position:absolute;inset:-4%;border-radius:50%;background:url(../assets/pattern-linhas.png) center/330px auto;opacity:.16;-webkit-mask-image:radial-gradient(circle,#000 18%,transparent 66%);mask-image:radial-gradient(circle,#000 18%,transparent 66%);animation:spin 160s linear infinite reverse}
 .form::after{content:"";position:absolute;right:8px;top:8px;width:170px;height:170px;border-top-right-radius:14px;background:url(../assets/pattern-linhas.png) right top/150px auto;opacity:.22;-webkit-mask-image:radial-gradient(circle at 100% 0,#000,transparent 70%);mask-image:radial-gradient(circle at 100% 0,#000,transparent 70%);pointer-events:none}
 .frame{background-blend-mode:normal}
 .frame .pat{opacity:.12}
-@media (max-width:640px){.pat{background-size:340px auto;opacity:.06}.strip{height:40px;background-size:170px auto}}
+@media (max-width:640px){.pat{background-size:340px auto;opacity:.06}}
 
 /* ═══ REFINAMENTO INSTITUCIONAL ═══
    menos efeito, mais sobriedade: cantos retos, dourado sólido nos títulos,
@@ -488,3 +466,71 @@ h2 .gold-text{background:none;color:var(--gold-500);-webkit-text-fill-color:var(
 @media (max-width:900px){.cta-in{flex-direction:column;align-items:flex-start;padding:52px 0}}
 @media (max-width:640px){.areas-list li{grid-template-columns:44px 1fr;padding:24px 0}.ai-n{padding-top:9px}.hero h1{font-size:40px}.light .pat-c{display:none}}
 @media (max-width:640px){.hero .eyebrow{letter-spacing:.12em;font-size:10px;gap:10px}.hero .eyebrow span{width:26px}}
+
+/* ═══ FONTES DA MARCA — Montserrat (títulos leves, destaque em peso médio) ═══ */
+h1,h2,h3,h4{font-weight:500;letter-spacing:-.01em;line-height:1.18}
+.gold-text,h2 .gold-text{font-style:normal;font-weight:500}
+.hero h1{font-size:clamp(34px,4.3vw,62px);font-weight:300;line-height:1.1}
+.sec-head h2,.about h2,.contact h2{font-size:clamp(28px,3.1vw,42px);font-weight:300;line-height:1.2}
+.cta-in h2{font-size:clamp(22px,2.3vw,32px);font-weight:300;line-height:1.3}
+.cta-in h2 em{font-style:normal;font-weight:500}
+.band blockquote p{font-style:normal;font-weight:300;font-size:clamp(19px,2.3vw,29px);line-height:1.45}
+.brand-txt strong{font-size:17px;font-weight:500;letter-spacing:.22em}
+.areas-list h3{font-size:clamp(18px,1.55vw,22px);font-weight:500}
+.panel h3{font-size:clamp(22px,2.2vw,30px);font-weight:400}
+.steps h3,.dont h3{font-size:22px;font-weight:500}
+.busca h4{font-size:16px;font-weight:600}
+.method h3{font-size:19px;font-weight:500}
+.pillars h4{font-size:17px;font-weight:600}
+.facts span{font-size:16px;font-weight:500}
+.faq summary{font-size:17px;font-weight:500}
+.form h3{font-size:24px;font-weight:500}
+.tablist b{font-size:15px;font-weight:600}
+.steps li::before{font-size:16px;font-weight:600}
+.num{font-size:20px;font-weight:400}
+@media (max-width:640px){.hero h1{font-size:32px}.faq summary{font-size:16px}.brand-txt strong{font-size:15px}}
+
+/* ═══ PATTERN EM COLUNAS (conceito da marca: coluna) ═══ */
+.band{overflow:hidden}
+.band-in{position:relative;z-index:1}
+.col-pat{position:absolute;top:0;bottom:0;width:120px;pointer-events:none;
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent);mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent)}
+.col-pat i{position:absolute;inset:0;background:var(--gold-500);opacity:.55;
+  -webkit-mask:url(../assets/brand/pattern-coluna.png) 0 0/240px auto repeat-y;mask:url(../assets/brand/pattern-coluna.png) 0 0/240px auto repeat-y}
+.col-l{left:clamp(12px,5vw,90px)}.col-r{right:clamp(12px,5vw,90px)}
+.foot-col i{opacity:.10}
+@media (max-width:900px){.band .col-pat{width:70px}.band .col-pat i{-webkit-mask-size:140px auto;mask-size:140px auto}.band-in{padding-inline:64px}}
+@media (max-width:640px){.band .col-pat{display:none}.band-in{padding-inline:0}.foot-col{display:none}}
+
+/* ═══ RODAPÉ ═══ */
+.footer{position:relative;overflow:hidden;background:linear-gradient(180deg,#07141F 0%,var(--ink-1000) 60%);border-top:1px solid rgba(220,169,70,.35)}
+.footer>.wrap{position:relative;z-index:1}
+.foot-top{display:grid;justify-items:center;text-align:center;gap:18px;padding:80px 0 56px;border-bottom:1px solid rgba(220,169,70,.16)}
+.foot-logo{width:190px;height:auto;filter:drop-shadow(0 0 22px rgba(220,169,70,.25))}
+.foot-tag{color:#c3c8d4;font-size:16px;max-width:40ch}
+.foot-top .btn{margin-top:8px}
+.foot-grid{display:grid;grid-template-columns:1.1fr 1.2fr .9fr;gap:48px;padding:56px 0}
+.foot-block h4{font:600 11px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--gold-500);margin-bottom:22px;display:flex;align-items:center;gap:12px}
+.foot-block h4::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(220,169,70,.35),transparent)}
+.foot-links{display:grid;grid-template-columns:1fr 1fr;gap:12px 24px}
+.foot-links a{font-size:14.5px;color:#c3c8d4;transition:color .25s}
+.foot-links a:hover{color:var(--gold-300)}
+.foot-contact{display:grid;gap:16px}
+.foot-contact li{display:grid;gap:4px;min-width:0}
+.foot-contact small{font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#7f8599}
+.foot-contact a,.foot-contact span{font-size:15px;color:#ece8dc;overflow-wrap:anywhere}
+.foot-contact a:hover{color:var(--gold-300)}
+.legal{display:grid;gap:18px;padding:28px 0 34px;border-top:1px solid rgba(220,169,70,.16)}
+.legal .small{font-size:11.5px;color:#7f8599;line-height:1.7;max-width:100ch}
+.legal-row{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.legal-row p{font-size:12.5px;color:#a9aebd}
+.to-top{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-500);display:inline-flex;gap:8px;align-items:center}
+.to-top:hover{color:var(--gold-300)}
+@media (max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}.foot-grid .foot-block:first-child{grid-column:1/-1}}
+@media (max-width:640px){.foot-top{padding:60px 0 44px}.foot-logo{width:160px}.foot-grid{grid-template-columns:1fr;gap:36px;padding:44px 0}.legal-row{flex-direction:column;align-items:flex-start}.foot-top .btn{width:auto}}
+/* colunas do rodapé: só na margem lateral, fora do conteúdo */
+.foot-col{width:84px}
+.foot-col i{-webkit-mask-size:168px auto;mask-size:168px auto}
+.foot-col.col-l{left:max(8px,calc((100vw - 1200px) / 2 - 104px))}
+.foot-col.col-r{right:max(8px,calc((100vw - 1200px) / 2 - 104px))}
+@media (max-width:1400px){.foot-col{display:none}}

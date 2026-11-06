@@ -11,7 +11,7 @@
 <meta property="og:description" content="Defesa penal estratégica, sigilosa e presente — do inquérito ao plenário.">
 <meta property="og:image" content="assets/logo-completo.png">
 <link rel="icon" type="image/png" href="assets/monograma.png">
-<link rel="preload" href="assets/fonts/cormorant-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"LegalService","name":"Gael Chagas — Advogado Criminalista","description":"Escritório de advocacia criminal: defesa em inquéritos, prisões, processos e recursos.","areaServed":"BR"}
@@ -77,6 +77,8 @@
 
 <!-- ═════════ FAIXA / DIREITO ═════════ -->
 <section class="band">
+  <span class="col-pat col-l" aria-hidden="true"><i></i></span>
+  <span class="col-pat col-r" aria-hidden="true"><i></i></span>
   <div class="wrap band-in">
     <svg class="qm" viewBox="0 0 48 36" aria-hidden="true"><path d="M0 36V20C0 8 6 1 18 0v6C12 7 10 11 10 16h8v20H0zm26 0V20C26 8 32 1 44 0v6c-6 1-8 5-8 10h8v20H26z"/></svg>
     <blockquote class="reveal">
@@ -85,8 +87,6 @@
     </blockquote>
   </div>
 </section>
-
-<div class="strip" aria-hidden="true"></div>
 
 <!-- ═════════ ÁREAS ═════════ -->
 <section class="sec" id="areas">
@@ -393,27 +393,49 @@
 </main>
 
 <!-- ═════════ FOOTER ═════════ -->
-<div class="strip" aria-hidden="true"></div>
 <footer class="footer">
+  <span class="col-pat col-l foot-col" aria-hidden="true"><i></i></span>
+  <span class="col-pat col-r foot-col" aria-hidden="true"><i></i></span>
+
+  <div class="wrap foot-top">
+    <img class="foot-logo" src="assets/logo-completo.png" alt="Gael Chagas — Advogado" width="200" height="185" loading="lazy">
+    <p class="foot-tag">Defesa criminal estratégica, ética e sigilosa.</p>
+    <a class="btn btn-gold js-wa" href="https://wa.me/5591980814834" target="_blank" rel="noopener">Falar com o advogado</a>
+  </div>
+
   <div class="wrap foot-grid">
-    <div class="foot-brand">
-      <img src="assets/logo-completo.png" alt="Gael Chagas — Advogado" width="190" height="176" loading="lazy">
-      <p>Defesa criminal estratégica, ética e sigilosa.</p>
-    </div>
-    <nav class="foot-nav" aria-label="Rodapé">
+    <nav class="foot-block" aria-label="Rodapé">
       <h4>Navegação</h4>
-      <a href="#areas">Áreas de atuação</a><a href="#fases">Fases do processo</a><a href="#plantao">Urgência</a><a href="#metodo">Método</a><a href="#sobre">O advogado</a><a href="#faq">Dúvidas</a><a href="#contato">Contato</a>
+      <ul class="foot-links">
+        <li><a href="#areas">Áreas de atuação</a></li><li><a href="#fases">Fases do processo</a></li>
+        <li><a href="#plantao">Urgência</a></li><li><a href="#metodo">Método</a></li>
+        <li><a href="#sobre">O advogado</a></li><li><a href="#faq">Dúvidas</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
     </nav>
-    <div class="foot-nav">
+    <div class="foot-block">
       <h4>Contato</h4>
-      <a class="js-tel" href="tel:+5591980814834">(91) 98081-4834</a>
-      <a href="mailto:gaelchagas07@hotmail.com">gaelchagas07@hotmail.com</a>
+      <ul class="foot-contact">
+        <li><small>Telefone / WhatsApp</small><a class="js-tel" href="tel:+5591980814834">(91) 98081-4834</a></li>
+        <li><small>E-mail</small><a href="mailto:gaelchagas07@hotmail.com">gaelchagas07@hotmail.com</a></li>
+        <li><small>Atendimento</small><span>Presencial e online, mediante agendamento</span></li>
+      </ul>
+    </div>
+    <div class="foot-block">
+      <h4>Registro</h4>
+      <ul class="foot-contact">
+        <li><small>Ordem dos Advogados do Brasil</small><span>OAB nº 34396</span></li>
+        <li><small>Área</small><span>Advocacia criminal</span></li>
+      </ul>
     </div>
   </div>
+
   <div class="wrap legal">
-    <p>Gael Chagas — Advogado · OAB nº 34396</p>
     <p class="small">Este site tem caráter exclusivamente informativo, nos termos do Código de Ética e Disciplina e do Provimento nº 205/2021 do Conselho Federal da OAB. Seu conteúdo não constitui promessa de resultado nem substitui a consulta a um advogado. Cada caso é analisado individualmente.</p>
-    <p class="small">© <span id="ano">2026</span> Gael Chagas Advogado. Todos os direitos reservados.</p>
+    <div class="legal-row">
+      <p>© <span id="ano">2026</span> Gael Chagas Advogado · OAB nº 34396 · Todos os direitos reservados.</p>
+      <a class="to-top" href="#inicio">Voltar ao topo <span aria-hidden="true">↑</span></a>
+    </div>
   </div>
 </footer>
 
