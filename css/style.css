@@ -3,7 +3,7 @@
    Segue o Guia da Marca (Direito Design):
    · Cores: azul #183547 · dourado #E0B165
    · Fontes: Montserrat (textos) · Inure Light (somente no logotipo, em vetor)
-   · Pattern oficial usado nítido: em placa colorida ou tom sobre tom
+   · Pattern oficial aplicado como coluna (conceito da marca: coluna, proteção, segurança)
    ═══════════════════════════════════════════════════════════ */
 
 @font-face{font-family:'Montserrat';font-style:normal;font-weight:100 900;font-display:swap;src:url(../assets/fonts/montserrat.woff2) format('woff2')}
@@ -28,9 +28,10 @@
   --muted:#A3AFBC;
   --line:rgba(224,177,101,.22);
   --line-soft:rgba(224,177,101,.12);
-  --font:'Montserrat',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  --font:'Montserrat',sans-serif;
   --ease:cubic-bezier(.22,.7,.2,1);
-  --pattern:url(../assets/brand/pattern-a.png);
+  --pattern:url(../assets/brand/pattern-a.png);          /* modelo 1: barras douradas sobre azul */
+  --pattern-lines:url(../assets/brand/pattern-a-linhas.png); /* modelo 3: azul com linhas douradas */
 }
 
 *,*::before,*::after{box-sizing:border-box}
@@ -101,20 +102,14 @@ h3{font-weight:500;font-size:19px;line-height:1.35;color:#fff}
 /* ── Hero ── */
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;padding:170px 0 110px;background:var(--navy-900)}
 .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--navy-800),var(--navy-900) 70%)}
-.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(40px,6vw,96px);align-items:center}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1fr);align-items:center}
+.hero-copy{max-width:min(720px,100% - 34vw)}
 .hero-copy{display:grid;gap:28px;justify-items:start}
 .hero-cta{display:flex;flex-wrap:wrap;gap:14px}
 .hero-badges{display:flex;flex-wrap:wrap;gap:12px 30px;padding-top:26px;border-top:1px solid var(--line-soft);width:100%;max-width:600px}
 .hero-badges li{display:flex;align-items:center;gap:10px;font:400 13.5px/1 var(--font);color:#C9D1DA;white-space:nowrap}
 .hero-badges svg{width:20px;height:20px;fill:none;stroke:var(--gold);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
 
-/* placa: o pattern oficial em suas cores, emoldurando o logotipo */
-.hero-art{justify-self:end;width:min(100%,440px)}
-.plaque{position:relative;aspect-ratio:4/5;background:var(--navy)}
-.plaque::before{content:"";position:absolute;inset:0;background:var(--gold);-webkit-mask:var(--pattern) center/300px auto repeat;mask:var(--pattern) center/300px auto repeat}
-.plaque-in{position:absolute;inset:24% 17%;display:grid;place-items:center;background:var(--navy);box-shadow:0 0 0 10px var(--navy),0 0 0 11px var(--gold)}
-.plaque-in img{width:68%;height:auto}
-.plaque-in .pl-mono{display:none;position:absolute;inset:0;margin:auto;width:auto;height:64%}
 
 /* ── Citação constitucional ── */
 .band{background:var(--navy);padding:72px 0;border-block:1px solid var(--line-soft)}
@@ -162,8 +157,7 @@ h3{font-weight:500;font-size:19px;line-height:1.35;color:#fff}
 
 /* ── Faixa de chamada: pattern tom sobre tom ── */
 .cta-band{position:relative;background:var(--navy);overflow:hidden}
-.cta-band::before{content:"";position:absolute;inset:0;background:var(--navy-line);-webkit-mask:var(--pattern) 0 0/300px auto repeat;mask:var(--pattern) 0 0/300px auto repeat;opacity:.55}
-.cta-in{position:relative;display:flex;align-items:center;justify-content:space-between;gap:40px;padding:62px clamp(28px,4vw,56px);margin-block:56px;background:var(--navy-900);border:1px solid var(--line)}
+.cta-in{position:relative;display:flex;align-items:center;justify-content:space-between;gap:40px;padding:76px 0;width:auto;max-width:none;margin-left:max(24px,(100% - 1200px)/2);margin-right:calc(24vw + 64px)}
 .cta-in h2{max-width:24ch}
 .cta-in p{color:var(--muted);font-weight:300;margin-top:12px}
 .cta-in .btn{flex:none}
@@ -271,19 +265,10 @@ h3{font-weight:500;font-size:19px;line-height:1.35;color:#fff}
 .form-note{min-height:1.2em;font-size:13px;text-align:center;color:var(--gold)}
 .form-note.err{color:#E58B6F}
 
-/* ── Rodapé: logotipo centralizado, pattern tom sobre tom ── */
-.footer{position:relative;background:var(--navy);overflow:hidden}
-.footer::before{content:"";position:absolute;inset:0;background:var(--navy-line);-webkit-mask:var(--pattern) 0 0/300px auto repeat;mask:var(--pattern) 0 0/300px auto repeat;opacity:.35}
-.foot-in{position:relative;display:grid;justify-items:center;text-align:center;gap:26px;padding:84px 0 52px}
-.foot-logo img{width:150px;height:auto}
+/* ── Rodapé: logotipo à esquerda, colunas de navegação e contato ── */
+.footer{position:relative;background:var(--navy);border-top:1px solid var(--line)}
 .foot-tag{font-size:14px;font-weight:300;letter-spacing:.04em;color:#C9D1DA}
-.foot-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 30px;padding:24px 0;border-block:1px solid var(--line);width:100%}
-.foot-nav a{font-size:13px;letter-spacing:.04em;color:#D2D9E0;transition:color .25s}
-.foot-nav a:hover{color:var(--gold)}
-.foot-contact{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 18px;font-size:14px;color:#fff}
-.foot-contact i{width:4px;height:4px;background:var(--gold);transform:rotate(45deg)}
-.foot-contact a:hover{color:var(--gold)}
-.legal{position:relative;display:grid;gap:8px;justify-items:center;text-align:center;padding:24px 0 34px;border-top:1px solid var(--line-soft)}
+.legal{position:relative;display:grid;gap:8px;justify-items:start;text-align:left;padding:24px 0 34px;border-top:1px solid var(--line-soft)}
 .legal p{font-size:11.5px;line-height:1.7;color:#93A2B1;max-width:92ch}
 
 /* ── WhatsApp flutuante ── */
@@ -316,16 +301,12 @@ h3{font-weight:500;font-size:19px;line-height:1.35;color:#fff}
   .hero{padding:156px 0 90px;min-height:auto}
   .hero-grid{grid-template-columns:1fr}
   .hero-art{order:-1;justify-self:start;width:170px}
-  .plaque::before{-webkit-mask-size:120px auto;mask-size:120px auto}
-  .plaque-in{inset:20% 14%;box-shadow:0 0 0 5px var(--navy),0 0 0 6px var(--gold)}
   .phases{grid-template-columns:1fr}
   .tablist{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line);scrollbar-width:none}
   .tablist button{flex:none;padding:18px 20px;border-bottom:0;border-right:1px solid var(--line-soft)}
   .tablist button::before{inset:auto 0 0 0;width:auto;height:3px;transform:scaleX(0)}
   .tablist button[aria-selected=true]::before{transform:scaleX(1)}
   .cta-in{flex-direction:column;align-items:flex-start}
-  .plaque-in .pl-logo{display:none}
-  .plaque-in .pl-mono{display:block}
 }
 @media (max-width:640px){
   body{font-size:15.5px}
@@ -346,10 +327,47 @@ h3{font-weight:500;font-size:19px;line-height:1.35;color:#fff}
   .fab{right:14px;bottom:14px;width:52px;height:52px}
   .eyebrow{letter-spacing:.2em;font-size:10.5px;gap:10px}
   .eyebrow span{width:24px}
-  .foot-contact{flex-direction:column;gap:8px}
-  .foot-contact i{display:none}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .js .reveal{opacity:1;transform:none}
+}
+
+/* ═══ PATTERN COMO COLUNA ═══
+   Conceito do guia da marca: o monograma é uma coluna (proteção, segurança).
+   O pattern entra em blocos verticais de borda reta, nítido e nas cores dos
+   modelos oficiais — nunca como textura apagada atrás de texto. */
+.pattern-col{position:absolute;top:0;bottom:0;right:0;pointer-events:none}
+.pattern-col::before{content:"";position:absolute;inset:0;background:var(--gold)}
+.hero-col{top:114px;width:30vw;max-width:520px;background:var(--navy);border-left:1px solid var(--gold);border-top:1px solid var(--gold)}
+.hero-col::before{-webkit-mask:var(--pattern-lines) 0 0/240px auto repeat;mask:var(--pattern-lines) 0 0/240px auto repeat}
+.cta-col{width:24vw;background:var(--navy-900)}
+.cta-col::before{-webkit-mask:var(--pattern) 0 0/200px auto repeat;mask:var(--pattern) 0 0/200px auto repeat}
+
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;padding:72px 0 48px}
+.foot-brand{display:grid;gap:20px;align-content:start;justify-items:start}
+.foot-lockup .brand-mono{height:58px}
+.foot-lockup .brand-rule{height:44px}
+.foot-lockup .brand-word{height:48px}
+.foot-tag{font-size:14px;font-weight:300;letter-spacing:.02em;color:#C9D1DA;max-width:34ch}
+.foot-col{display:grid;gap:12px;align-content:start;justify-items:start}
+.foot-col h4{margin:0 0 6px;font:600 11px/1 var(--font);letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.foot-col a,.foot-col span{font-size:14px;color:#D2D9E0;transition:color .25s}
+.foot-col a:hover{color:var(--gold)}
+.legal p{max-width:100ch}
+
+@media (max-width:900px){
+  .hero{padding-bottom:150px}
+  .hero-copy{max-width:none}
+  .hero-col{top:auto;left:0;border-top:1px solid var(--gold);width:auto;max-width:none;height:84px;border-left:0;border-top:1px solid var(--gold)}
+  .hero-col::before{-webkit-mask-size:160px auto;mask-size:160px auto}
+  .cta-in{max-width:none;margin:0 auto;padding:124px 0 56px}
+  .cta-col{bottom:auto;left:0;width:auto;height:72px}
+  .cta-col::before{-webkit-mask-size:140px auto;mask-size:140px auto}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .foot-brand{grid-column:1/-1}
+}
+@media (max-width:640px){
+  .foot-grid{grid-template-columns:1fr;gap:36px;padding:56px 0 36px}
+  .foot-lockup .brand-mono{height:50px}.foot-lockup .brand-word{height:42px}
 }
