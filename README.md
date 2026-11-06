@@ -6,7 +6,7 @@ Paleta extraída do vídeo da marca: ouro metálico `#A06A2F → #E1A949 → #FD
 Tipografia: Cormorant Garamond (títulos) + Montserrat (texto), embutidas em `assets/fonts`.
 
 ## Dados já preenchidos (do cartão de visita)
-WhatsApp/telefone (91) 98701-8228, e-mail gaelchagas07@hotmail.com, OAB 34396. Para mudar: `js/main.js` (`CONFIG`) e `index.html`.
+WhatsApp/telefone (91) 98701-8228, e-mail gaelchagas07@hotmail.com, OAB/PA 34396. Atendimento presencial e online em Belém e Região Metropolitana. Para mudar: `js/main.js` (`CONFIG`) e `index.html`.
 
 ## Foto do advogado
 Salve uma foto retrato (vertical, boa luz, fundo neutro) como `assets/foto-gael.jpg`. Ela aparece automaticamente na seção "O advogado"; sem o arquivo, o monograma é exibido no lugar.
