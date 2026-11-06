@@ -53,7 +53,7 @@ const CONFIG = {
       wrap.style.setProperty('--ry', (x * 14).toFixed(2) + 'deg');
       wrap.style.setProperty('--rx', (-y * 10).toFixed(2) + 'deg');
     });
-    hero.addEventListener('pointerleave', () => { wrap.style.setProperty('--ry', '0deg'); wrap.style.setProperty('--rx', '0deg'); });
+    hero.addEventListener('pointerleave', () => { wrap.style.removeProperty('--ry'); wrap.style.removeProperty('--rx'); });
   }
 
   /* Abas (fases) — acessível por teclado */

@@ -630,3 +630,11 @@ h2 .gold-text,.cta-in h2 em{background:linear-gradient(100deg,#DCA946 0%,#DCA946
 /* ═══ MONOGRAMA DO TOPO: vetor em ouro com espessura real (substitui o recorte do vídeo) ═══ */
 .hero-mark .mono{filter:drop-shadow(0 0 30px rgba(220,169,70,.38)) drop-shadow(0 30px 40px rgba(0,0,0,.8))}
 .mono-shine{-webkit-mask-image:url(../assets/brand/monograma-metal.svg);mask-image:url(../assets/brand/monograma-metal.svg)}
+
+/* ═══ CENA DO MONOGRAMA (como no vídeo): peça apoiada na parede de pedra ═══ */
+.hero-mark .ring,.hero-mark::before{display:none}
+.hero-mark::after{content:"";position:absolute;z-index:1;inset:-10% -20%;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(220,169,70,.20),rgba(220,169,70,.06) 55%,transparent 100%)}
+.mono-wrap{--ry:0deg;--rx:0deg}
+.hero-mark .mono{filter:drop-shadow(16px 22px 14px rgba(0,0,0,.72)) drop-shadow(0 0 28px rgba(220,169,70,.28))}
+@media (max-width:900px){.hero-mark::after{inset:-30% -60%}.hero-mark .mono{filter:drop-shadow(8px 12px 8px rgba(0,0,0,.7)) drop-shadow(0 0 18px rgba(220,169,70,.3))}}
