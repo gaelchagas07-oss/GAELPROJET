@@ -642,3 +642,28 @@ h2 .gold-text,.cta-in h2 em{background:linear-gradient(100deg,#DCA946 0%,#DCA946
 /* rodapé: logo vetorial legível */
 .foot-logo{width:240px;filter:drop-shadow(0 1px 0 #6b4418) drop-shadow(0 0 20px rgba(220,169,70,.22))}
 @media (max-width:640px){.foot-logo{width:200px}}
+
+/* ═══ RODAPÉ — palco do logo (luz e reflexo como no vídeo) ═══ */
+.foot-top{position:relative;padding:96px 0 64px;gap:0}
+.foot-top::before{content:"";position:absolute;inset:0 -10%;z-index:-1;pointer-events:none;
+  background:radial-gradient(40% 55% at 50% 0%,rgba(46,98,190,.30),transparent 70%),radial-gradient(26% 30% at 50% 34%,rgba(220,169,70,.16),transparent 75%)}
+.foot-stage{position:relative;width:280px}
+.foot-stage .foot-logo{display:block;width:100%;height:auto;filter:drop-shadow(0 1px 0 #6b4418) drop-shadow(10px 14px 10px rgba(0,0,0,.6)) drop-shadow(0 0 24px rgba(220,169,70,.22))}
+.foot-shine{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,250,225,.9) 50%,transparent 60%) 120% 0/300% 100% no-repeat;
+  -webkit-mask:url(../assets/brand/logo-vertical-metal.svg) center/100% 100% no-repeat;mask:url(../assets/brand/logo-vertical-metal.svg) center/100% 100% no-repeat;
+  mix-blend-mode:overlay;animation:sweep 9s ease-in-out 2s infinite}
+.foot-orn{display:flex;align-items:center;gap:14px;margin:34px 0 22px}
+.foot-orn span{width:72px;height:1px;background:linear-gradient(90deg,transparent,rgba(220,169,70,.75))}
+.foot-orn span:last-child{background:linear-gradient(90deg,rgba(220,169,70,.75),transparent)}
+.foot-orn i{width:7px;height:7px;background:var(--gold-500);transform:rotate(45deg);box-shadow:0 0 10px rgba(220,169,70,.6)}
+.foot-top .foot-tag{font-size:clamp(17px,1.6vw,20px);font-weight:300;letter-spacing:.01em;color:#ddd8c8;max-width:none}
+.foot-ctas{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:30px}
+.foot-ctas .btn{margin:0}
+@media (max-width:640px){
+  .foot-top{padding:68px 0 48px}
+  .foot-stage{width:220px}
+  .foot-orn{margin:26px 0 18px}.foot-orn span{width:48px}
+  .foot-ctas{flex-direction:column;align-items:stretch;width:100%;max-width:340px}
+}
+@media (prefers-reduced-motion:reduce){.foot-shine{display:none}}
