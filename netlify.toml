@@ -1,0 +1,23 @@
+# Site estático: sem etapa de build; publica a raiz do repositório.
+[build]
+  publish = "."
+  command = ""
+
+# Endereço sem "www" redireciona para o principal (www)
+[[redirects]]
+  from = "https://advgaelchagas.com.br/*"
+  to = "https://www.advgaelchagas.com.br/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"

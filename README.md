@@ -1,5 +1,7 @@
 # Gael Chagas — Advogado Criminalista (landing page)
 
+Endereço oficial: https://www.advgaelchagas.com.br
+
 Site estático (HTML + CSS + JS puro, sem build). Basta abrir `index.html` ou publicar a pasta em qualquer hospedagem (Netlify, Vercel, GitHub Pages, Hostinger...).
 
 Paleta extraída do vídeo da marca: ouro metálico `#A06A2F → #E1A949 → #FDDC7D → #FFE899` sobre azul-marinho profundo `#000106 / #050D1D`.
